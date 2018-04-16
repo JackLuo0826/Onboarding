@@ -1,0 +1,24 @@
+namespace Onboarding.Migrations
+{
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<Onboarding.Data_Access_Layer.BusinessContext>
+    {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = true;
+            ContextKey = "Onboarding.Data_Access_Layer.BusinessContext";
+        }
+
+        protected override void Seed(Onboarding.Data_Access_Layer.BusinessContext context)
+        {
+            //  This method will be called after migrating to the latest version.
+
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data.
+        }
+    }
+}

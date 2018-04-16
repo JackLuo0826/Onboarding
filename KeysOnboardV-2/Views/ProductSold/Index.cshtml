@@ -1,0 +1,78 @@
+﻿<script src="~/Scripts/jquery-3.0.0.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/ProductSold.js"></script>
+
+@{
+    ViewBag.Title = "Sales";
+}
+
+<div class="container">
+    <h2>Sales</h2>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="loadSelectList(0);">Add New Sale</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Customer Name
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Store Name
+                </th>
+                <th>
+                    Date Sold
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel">Add/Update Sales</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="Id">Id</label>
+                        <input type="text" class="form-control" id="Id" placeholder="Id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label for="CustomerId">Select Customer:</label>
+                        <select class="form-control" id="CustomerId">
+                            <option id="defaultCustomer" value=0></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ProductId">Select Product:</label>
+                        <select class="form-control" id="ProductId">
+                            <option id="defaultProduct" value=0></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="StoreId">Select Store:</label>
+                        <select class="form-control" id="StoreId">
+                            <option id="defaultStore" value=0></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="DateSold">Date Sold</label>
+                        <input type="text" class="form-control" id="DateSold" placeholder="DateSold" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
